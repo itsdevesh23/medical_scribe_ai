@@ -1,0 +1,15 @@
+fastapi==0.111.0
+uvicorn==0.30.1
+sqlalchemy==2.0.30
+celery==5.4.0
+redis==5.0.4
+openai-whisper==20231117
+pyannote.audio==3.1.1
+torchaudio==2.3.1
+torch==2.3.1
+ollama==0.2.1
+python-dotenv==1.0.1
+python-multipart==0.0.9
+reportlab==4.2.0
+gevent==24.2.1
+pydub==0.25.1

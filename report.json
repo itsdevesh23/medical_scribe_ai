@@ -1,0 +1,59 @@
+{
+  "meeting_title": "Team Meeting",
+  "date": "2022-03-15",
+  "attendees": [
+    "Speaker 4 (Meeting Lead)",
+    "Speaker 1 (Morgan)",
+    "Speaker 3 (Amy)",
+    "Speaker 2 (Charles)"
+  ],
+  "speaker_mapping": {
+    "Speaker 4": "Meeting Lead",
+    "Speaker 1": "Morgan",
+    "Speaker 3": "Amy",
+    "Speaker 2": "Charles"
+  },
+  "key_discussion_points": [
+    "Meeting agenda provided by Speaker 4",
+    "Apologies from Emma for another meeting",
+    "Update on Morgan's completed blog",
+    "Apprentice networking event report with no errors",
+    "Charles update on project plan",
+    "OD operating plan discussed and reviewed",
+    "OD website update due to go live next month",
+    "Review needed for workshop numbers",
+    "Brainstorming session for charity events"
+  ],
+  "decisions_made": [
+    "Agreed to look at getting another workshop booked in for the beginning of next month",
+    "Brainstorm charity event ideas at next meeting",
+    "Review low-attendance workshops next week",
+    "Agreed to review the OD website"
+  ],
+  "action_items": [
+    {
+      "task": "Review OD website",
+      "assigned_to": "Morgan",
+      "deadline": "not specified"
+    },
+    {
+      "task": "Update Amy on workshop numbers",
+      "assigned_to": "Morgan",
+      "deadline": "not specified"
+    },
+    {
+      "task": "Circulate action items from today's meeting",
+      "assigned_to": "Morgan",
+      "deadline": "end of day"
+    },
+    {
+      "task": "Prepare charity event ideas for next meeting",
+      "assigned_to": "All team members",
+      "deadline": "next meeting"
+    }
+  ],
+  "next_meeting": {
+    "date": "not specified",
+    "details": "Discussion on charity events"
+  }
+}
