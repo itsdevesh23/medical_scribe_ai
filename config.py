@@ -1,3 +1,5 @@
+import os
+
 # ---------- Paths ----------
 AUDIO_FILE = "sample_audio/test_meeting.wav"
 
@@ -7,6 +9,7 @@ PYANNOTE_MODEL_PATH = "models/pyannote/speaker-diarization-community-1/config.ya
 
 # Ollama model name
 OLLAMA_MODEL = "phi3:mini"        # Changed from mistral for faster CPU inference
+OLLAMA_HOST = os.getenv("OLLAMA_HOST", "http://localhost:11434")
 
 # ---------- Mode ----------
 MODE = "meeting"                    # "medical" or "meeting"

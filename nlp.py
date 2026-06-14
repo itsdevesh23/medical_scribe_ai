@@ -1,7 +1,10 @@
 import ollama
+from ollama import Client
 import json
 import re
-from config import OLLAMA_MODEL, MEDICAL_PROMPT, MEETING_PROMPT, MODE
+from config import OLLAMA_MODEL, MEDICAL_PROMPT, MEETING_PROMPT, MODE, OLLAMA_HOST
+
+ollama_client = Client(host=OLLAMA_HOST)
 
 
 def clean_report(report):
@@ -199,7 +202,7 @@ def generate_report(transcript_text: str, mode: str = None):
 
     if mode == "medical":
         prompt = MEDICAL_PROMPT.format(transcript=transcript_text)
-        response = ollama.chat(
+        response = ollama_client.chat(
             model=OLLAMA_MODEL,
             messages=[{"role": "user", "content": prompt}]
         )
@@ -209,7 +212,7 @@ def generate_report(transcript_text: str, mode: str = None):
 
     elif mode == "meeting":
         prompt = MEETING_PROMPT.format(transcript=transcript_text)
-        response = ollama.generate(
+        response = ollama_client.generate(
             model=OLLAMA_MODEL,
             prompt=prompt,
             format='json',
