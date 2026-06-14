@@ -104,7 +104,35 @@ npm run dev
 
 ---
 
-## 🏢 Offline Deployment (Hospital / Office)
+## 🐳 Docker Deployment (Recommended for Office Testing)
+
+If you want to run the application in an office environment or don't want to install dependencies locally, you can use **Docker**. This bundles the frontend, backend, database, and AI models into isolated containers.
+
+### Docker Prerequisites
+1. **Docker Desktop**: Install from [docker.com](https://www.docker.com/products/docker-desktop/).
+2. **AI Models**: You still need to download the AI models locally first so Docker can mount them.
+   - Run `python download_models.py` (ensure you have your Hugging Face token in the file).
+   - *Note: Docker will automatically pull the Ollama `phi3:mini` model for you on startup!*
+
+### Running with Docker
+
+1. Open a terminal in the `medical_scribe_ai` folder.
+2. Run this single command:
+   ```bash
+   docker-compose up --build
+   ```
+3. Wait for the containers to build and start. The first time will take a few minutes as it downloads the environments.
+4. Once running, open your web browser and go to:
+   **`http://localhost:5173`**
+
+To stop the application, simply press `Ctrl + C` in the terminal, or run:
+```bash
+docker-compose down
+```
+
+---
+
+## 🏢 Offline Deployment (Hospital / Office Without Docker)
 This system is designed to be fully transferred to an air-gapped or offline computer:
 1. Run `download_models.py` and `ollama pull phi3:mini` on an internet-connected machine.
 2. Copy the entire `medical_scribe_ai` folder (including the downloaded `models/` folder) via USB to the target machine.
