@@ -15,7 +15,7 @@ OLLAMA_HOST = os.getenv("OLLAMA_HOST", "http://localhost:11434")
 MODE = "meeting"                    # "medical" or "meeting"
 
 # For meetings: allow 3 to 10 speakers; for medical: fix to 2.
-MIN_SPEAKERS = 2
+MIN_SPEAKERS = 1
 MAX_SPEAKERS = 5
 
 # ---------- Prompts ----------
