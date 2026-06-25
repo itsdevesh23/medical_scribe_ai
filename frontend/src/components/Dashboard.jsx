@@ -191,7 +191,7 @@ export default function Dashboard({ onViewSession }) {
                       type="file"
                       ref={fileInputRef}
                       onChange={handleFileChange}
-                      accept="audio/wav,audio/mp3,audio/webm"
+                      accept="audio/wav,audio/mp3,audio/webm,.wav,.mp3,.webm,.m4a"
                       className="hidden"
                     />
                     <div className="flex flex-col items-center gap-4 text-base-content/60 group-hover:text-primary transition-colors">
