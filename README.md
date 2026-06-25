@@ -63,3 +63,5 @@ This system is designed to be fully transferred to an air-gapped or offline comp
 | **Audio format error** | Ensure `ffmpeg` is correctly installed and accessible in your system's PATH variable. |
 | **LLM output is poor** | You can switch models in `config.py` (e.g., to `llama3` for better multilingual support). |
 | **TimeoutError / Websocket crash** | This happens if Redis gets stuck. Just restart the Celery and FastAPI terminals. |
+
+hf _ QiOUiNdbzXQzarTtkBOVdWFjQjzHwjgGdm
