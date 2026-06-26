@@ -6,6 +6,13 @@ This document contains everything you need to do at the office tomorrow. Part 1 
 
 ## PART 1: Manual Code Updates (Do these on the Internet Laptop first)
 
+**Step 0: Clean the Slate**
+Before you edit any files, open your terminal in your project folder and run:
+```bash
+docker-compose down
+```
+This will cleanly destroy any old, broken background containers so you start completely fresh.
+
 If you don't want to re-download the ZIP, make these 6 quick edits in your existing office folder:
 
 ### 1. `docker-compose.yml`
