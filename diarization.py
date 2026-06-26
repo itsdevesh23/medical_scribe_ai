@@ -7,8 +7,8 @@ from config import PYANNOTE_MODEL_PATH, MIN_SPEAKERS, MAX_SPEAKERS
 import os
 
 def diarize_audio(audio_path: str):
-    # huggingface_hub automatically reads the HF_TOKEN environment variable!
-    pipeline = Pipeline.from_pretrained(PYANNOTE_MODEL_PATH)
+    token = os.getenv("HF_TOKEN")
+    pipeline = Pipeline.from_pretrained(PYANNOTE_MODEL_PATH, use_auth_token=token)
     diarization = pipeline(audio_path, min_speakers=MIN_SPEAKERS, max_speakers=MAX_SPEAKERS)
     speaker_segments = []
     for turn, speaker in diarization.speaker_diarization:
