@@ -65,3 +65,4 @@ This system is designed to be fully transferred to an air-gapped or offline comp
 | **TimeoutError / Websocket crash** | This happens if Redis gets stuck. Just restart the Celery and FastAPI terminals. |
 
 hf _ QiOUiNdbzXQzarTtkBOVdWFjQjzHwjgGdm
+docker-compose up
