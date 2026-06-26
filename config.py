@@ -5,7 +5,7 @@ AUDIO_FILE = "sample_audio/test_meeting.wav"
 
 # Local model paths (relative to project root)
 WHISPER_MODEL_PATH = "models/whisper/medium"
-PYANNOTE_MODEL_PATH = "models/pyannote/speaker-diarization-community-1/config.yaml"
+PYANNOTE_MODEL_PATH = "pyannote/speaker-diarization-3.1"
 
 # Ollama model name
 OLLAMA_MODEL = "phi3:mini"        # Changed from mistral for faster CPU inference

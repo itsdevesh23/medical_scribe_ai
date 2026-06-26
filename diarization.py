@@ -4,9 +4,11 @@ speechbrain.utils.importutils.LazyModule.__getattr__ = lambda self, name: (_ for
 
 from pyannote.audio import Pipeline
 from config import PYANNOTE_MODEL_PATH, MIN_SPEAKERS, MAX_SPEAKERS
+import os
 
 def diarize_audio(audio_path: str):
-    pipeline = Pipeline.from_pretrained(PYANNOTE_MODEL_PATH)
+    token = os.getenv("HF_TOKEN")
+    pipeline = Pipeline.from_pretrained(PYANNOTE_MODEL_PATH, use_auth_token=token)
     diarization = pipeline(audio_path, min_speakers=MIN_SPEAKERS, max_speakers=MAX_SPEAKERS)
     speaker_segments = []
     for turn, speaker in diarization.speaker_diarization:

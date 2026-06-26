@@ -18,28 +18,9 @@ def download_whisper():
     print("Whisper done.")
 
 def download_pyannote():
-    target = os.path.join(MODELS_DIR, "pyannote", "speaker-diarization-community-1")
-    print(f"Downloading PyAnnote ({PYANNOTE_MODEL}) to {target} ...")
-    snapshot_download(repo_id=PYANNOTE_MODEL, local_dir=target,
-                      token=HF_TOKEN)
-    
-    # Patch config.yaml to work seamlessly offline in PyAnnote 3.1.1
-    config_path = os.path.join(target, "config.yaml")
-    if os.path.exists(config_path):
-        with open(config_path, "r") as f:
-            content = f.read()
-        content = content.replace("VBxClustering", "AgglomerativeClustering")
-        content = content.replace("$model/segmentation", "/app/models/pyannote/speaker-diarization-community-1/segmentation/pytorch_model.bin")
-        content = content.replace("$model/embedding", "/app/models/pyannote/speaker-diarization-community-1/embedding/pytorch_model.bin")
-        
-        # Remove plda line if it exists
-        lines = content.split("\n")
-        lines = [line for line in lines if "plda:" not in line]
-        
-        with open(config_path, "w") as f:
-            f.write("\n".join(lines))
-        print("Patched PyAnnote config.yaml for offline use.")
-
+    print(f"Downloading PyAnnote ({PYANNOTE_MODEL}) to HuggingFace cache...")
+    from pyannote.audio import Pipeline
+    Pipeline.from_pretrained(PYANNOTE_MODEL, use_auth_token=HF_TOKEN)
     print("PyAnnote done.")
 
 def download_phi3_gguf():

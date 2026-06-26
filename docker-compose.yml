@@ -47,10 +47,13 @@ services:
     volumes:
       - ./storage:/app/storage
       - ./models:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
+      - ~/.cache/whisper:/root/.cache/whisper
     environment:
       - DATABASE_URL=postgresql://user:pass@db:5432/medicalscribe
       - REDIS_URL=redis://redis:6379/0
       - OLLAMA_HOST=http://ollama:11434
+      - HF_TOKEN=${HF_TOKEN}
     depends_on:
       - db
       - redis
@@ -64,6 +67,8 @@ services:
     volumes:
       - ./storage:/app/storage
       - ./models:/app/models
+      - ~/.cache/huggingface:/root/.cache/huggingface
+      - ~/.cache/whisper:/root/.cache/whisper
     environment:
       - DATABASE_URL=postgresql://user:pass@db:5432/medicalscribe
       - REDIS_URL=redis://redis:6379/0
