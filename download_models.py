@@ -7,7 +7,9 @@ WHISPER_MODEL = "Systran/faster-whisper-small"
 PYANNOTE_MODEL = "pyannote/speaker-diarization-3.1"
 PHI3_REPO = "microsoft/Phi-3-mini-4k-instruct-gguf"
 PHI3_FILENAME = "Phi-3-mini-4k-instruct-q4.gguf"
-HF_TOKEN = "YOUR_HUGGING_FACE_TOKEN_HERE"
+from dotenv import load_dotenv
+load_dotenv()
+HF_TOKEN = os.getenv("HF_TOKEN", "YOUR_HUGGING_FACE_TOKEN_HERE")
 # --------------------------
 
 def download_whisper():

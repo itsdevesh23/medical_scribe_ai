@@ -73,6 +73,7 @@ services:
       - DATABASE_URL=postgresql://user:pass@db:5432/medicalscribe
       - REDIS_URL=redis://redis:6379/0
       - OLLAMA_HOST=http://ollama:11434
+      - HF_TOKEN=${HF_TOKEN}
     depends_on:
       - db
       - redis

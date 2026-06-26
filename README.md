@@ -24,8 +24,10 @@ If you want to run the application in an office environment or don't want to ins
 
 ### Docker Prerequisites
 1. **Docker Desktop**: Install from [docker.com](https://www.docker.com/products/docker-desktop/).
-2. **AI Models**: You still need to download the AI models locally first so Docker can mount them.
-   - Open `download_models.py` and paste your Hugging Face token where it says `YOUR_HUGGING_FACE_TOKEN_HERE`.
+2. **Hugging Face Token**: You need a token to download the AI models.
+   - Create a file named `.env` in the root of the project (next to docker-compose.yml).
+   - Add this line to the file: `HF_TOKEN=your_hugging_face_token_here`
+3. **AI Models**: You still need to download the AI models locally first so Docker can mount them.
    - Run `docker-compose run --rm backend python download_models.py` (This uses Docker to safely download the models so you don't even need Python installed on your PC!).
    - *Note: Docker will automatically pull the Ollama `phi3:mini` model for you on startup!*
 
