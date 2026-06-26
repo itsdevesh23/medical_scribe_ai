@@ -24,7 +24,7 @@ services:
     ports:
       - "11434:11434"
     volumes:
-      - ollama_data:/root/.ollama
+      - ./ollama_storage:/root/.ollama
 
   ollama-pull:
     image: curlimages/curl:latest
