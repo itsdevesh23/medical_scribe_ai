@@ -11,7 +11,7 @@ def diarize_audio(audio_path: str):
     pipeline = Pipeline.from_pretrained(PYANNOTE_MODEL_PATH, use_auth_token=token)
     diarization = pipeline(audio_path, min_speakers=MIN_SPEAKERS, max_speakers=MAX_SPEAKERS)
     speaker_segments = []
-    for turn, speaker in diarization.speaker_diarization:
+    for turn, _, speaker in diarization.itertracks(yield_label=True):
         speaker_segments.append({
             "start": turn.start,
             "end": turn.end,
